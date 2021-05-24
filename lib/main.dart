@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../screens/welcomeScreen.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -11,9 +14,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: "Authentication",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light().copyWith(
+      theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: GoogleFonts.poppins().fontFamily,
       ),
+      home: Authentication(),
     );
   }
 }
@@ -21,7 +26,9 @@ class _MyAppState extends State<MyApp> {
 class Authentication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: WelcomeScreen(),
+    );
   }
 }
 
