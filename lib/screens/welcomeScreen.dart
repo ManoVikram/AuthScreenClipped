@@ -19,7 +19,8 @@ class WelcomeScreen extends StatelessWidget {
             flex: 2,
             child: Container(
               width: double.infinity,
-              color: Colors.blue[300]?.withOpacity(0.98),
+              // color: Colors.blue[300]?.withOpacity(0.98),
+              color: Color(0xFF60BEF6),
               padding: EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,7 +61,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
+                      Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (_) => LoginScreen(),
                         ),

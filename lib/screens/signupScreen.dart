@@ -1,14 +1,13 @@
-import 'package:animted_login_sceen/screens/signupScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import './loginScreen.dart';
 import '../widgets/roundedTextField.dart';
 
-class LoginScreen extends StatelessWidget {
+class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.blue[800],
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Container(
@@ -17,33 +16,31 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: ClipPath(
-                  clipper: JerryClipper(),
+                  clipper: TomClipper(),
                   child: Image.asset(
-                    "assets/images/3D_art1.png",
+                    "assets/images/3D_art4.png",
                     fit: BoxFit.cover,
+                    width: double.infinity,
                   ),
                 ),
               ),
               Expanded(
                 flex: 2,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 10.0,
+                      height: 20.0,
                     ),
                     Text(
-                      "Missed You!",
+                      "New here?",
                       style: TextStyle(
                         fontSize: 36.0,
                         fontWeight: FontWeight.bold,
                         // letterSpacing: 2.2,
-                        // color: Colors.blueGrey,
-                        // color: Color(0xFFeaa75c),
-                        color: Colors.indigo[300],
+                        color: Colors.redAccent,
                         shadows: [
                           Shadow(
                             offset: Offset(3, 7),
@@ -58,14 +55,14 @@ class LoginScreen extends StatelessWidget {
                     ),
                     RoundedTextField(
                       icon: CupertinoIcons.mail_solid,
-                      color: Colors.indigo,
+                      color: Colors.pinkAccent,
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
                     RoundedTextField(
                       icon: CupertinoIcons.lock_fill,
-                      color: Colors.indigo,
+                      color: Colors.pinkAccent,
                       isPassword: true,
                     ),
                     SizedBox(
@@ -75,9 +72,8 @@ class LoginScreen extends StatelessWidget {
                       onPressed: () {},
                       icon: Icon(CupertinoIcons.right_chevron),
                       style: ElevatedButton.styleFrom(
-                        // primary: Color(0xFFeaa75c),
-                        // primary: Color(0xFFe97da4),
-                        primary: Color(0xFF996FCF),
+                        // primary: Color(0xFFFE858A),
+                        primary: Color(0xFF4C4675),
                         elevation: 8.0,
                         padding: EdgeInsets.symmetric(
                           horizontal: 20.0,
@@ -93,18 +89,18 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      label: Text("Login"),
+                      label: Text("SignUp"),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
-                            builder: (_) => SignupScreen(),
+                            builder: (_) => LoginScreen(),
                           ),
                         );
                       },
                       child: Text(
-                        "New here? Register",
+                        "We met before? Try here",
                         style: TextStyle(
                           fontSize: 14.0,
                           color: Colors.indigo,
@@ -112,6 +108,44 @@ class LoginScreen extends StatelessWidget {
                           decoration: TextDecoration.underline,
                         ),
                       ),
+                    ),
+                    Text(
+                      "or",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          iconSize: 70.0,
+                          icon: CircleAvatar(
+                            backgroundImage:
+                                AssetImage("assets/images/googleLogo.jpg"),
+                            backgroundColor: Colors.blueGrey,
+                          ),
+                        ),
+                        Container(
+                          height: 50.0,
+                          width: 2.0,
+                          color: Colors.blueGrey[200],
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          iconSize: 70.0,
+                          icon: CircleAvatar(
+                            backgroundImage:
+                                AssetImage("assets/images/facebookLogo.png"),
+                            backgroundColor: Colors.blueGrey,
+                          ),
+                          splashRadius: 80.0,
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -124,29 +158,72 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class JerryClipper extends CustomClipper<Path> {
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-
+class TomClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
-    path.lineTo(0.0, size.height - 30.0);
+    path.lineTo(0.0, size.height - 30);
     path.quadraticBezierTo(
       size.width / 4,
-      size.height,
+      size.height * 0.8,
       size.width / 2,
       size.height,
     );
     path.quadraticBezierTo(
       size.width - size.width / 4,
-      size.height,
+      size.height * 0.8,
       size.width,
       size.height - 30.0,
     );
     path.lineTo(size.width, 0.0);
     path.close();
-
     return path;
   }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
+
+/* class TomClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0.0, size.height - 30);
+    path.quadraticBezierTo(
+      size.width / 8,
+      size.height,
+      size.width / 4,
+      size.height,
+    );
+    path.quadraticBezierTo(
+      size.width / 2 - size.width / 8,
+      size.height,
+      size.width / 2,
+      size.height - 30,
+    );
+    /* path.quadraticBezierTo(
+      size.width / 3,
+      size.height,
+      size.width / 2,
+      size.height - 30,
+    ); */
+    path.quadraticBezierTo(
+      size.width / 2 + size.width / 8,
+      size.height,
+      size.width / 2 + size.width / 4,
+      size.height,
+    );
+    path.quadraticBezierTo(
+      size.width / 2 + size.width / 4 + size.width / 8,
+      size.height,
+      size.width,
+      size.height - 30,
+    );
+    path.lineTo(size.width, 0.0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+} */
