@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pageTransition.dart';
 import './loginScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -61,9 +62,14 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
+                      /* Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (_) => LoginScreen(),
+                        ),
+                      ); */
+                      Navigator.of(context).pushReplacement(
+                        createRoute(
+                          LoginScreen(),
                         ),
                       );
                     },

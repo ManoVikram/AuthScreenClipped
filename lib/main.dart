@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,6 +20,16 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: GoogleFonts.poppins().fontFamily,
+        pageTransitionsTheme: PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android: SharedAxisPageTransitionsBuilder(
+              transitionType: SharedAxisTransitionType.horizontal,
+            ),
+            TargetPlatform.iOS: SharedAxisPageTransitionsBuilder(
+              transitionType: SharedAxisTransitionType.horizontal,
+            ),
+          },
+        ),
       ),
       home: Authentication(),
     );

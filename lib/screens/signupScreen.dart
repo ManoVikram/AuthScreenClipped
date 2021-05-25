@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../pageTransition.dart';
 import './loginScreen.dart';
 import '../widgets/roundedTextField.dart';
 
@@ -93,9 +94,14 @@ class SignupScreen extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
+                        /* Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                             builder: (_) => LoginScreen(),
+                          ),
+                        ); */
+                        Navigator.of(context).pushReplacement(
+                          createRoute(
+                            LoginScreen(),
                           ),
                         );
                       },
