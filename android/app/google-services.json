@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1036547368456",
+    "project_id": "audio-demo-flutter",
+    "storage_bucket": "audio-demo-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036547368456:android:52cb0556bd9c014dd713bd",
+        "android_client_info": {
+          "package_name": "com.example.audio_upload_play_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036547368456-prlee36d9ek71saiq1hb3bjka0r29onv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfFFMDozbMdbM4Q1OjhNXF98plDo_jFPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036547368456-prlee36d9ek71saiq1hb3bjka0r29onv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
